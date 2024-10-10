@@ -1,0 +1,21 @@
+{
+  "@@locale": "ar",
+  "title": "متجر الكتب",
+  "settings": "الإعدادات",
+  "profile": "الملف الشخصي",
+  "password_security": "كلمة المرور والأمان",
+  "language": "اللغة",
+  "dark_mode": "الوضع الداكن",
+  "help": "مساعدة",
+  "logout": "تسجيل الخروج",
+  "general": "عام",
+  "select_language": "اختر اللغة",
+  "english": "الإنجليزية",
+  "arabic": "العربية",
+  "phone_number": "رقم الهاتف",
+  "date_of_birth": "تاريخ الميلاد",
+  "edit_profile": "تعديل الملف الشخصي",
+  "@title": {
+    "description": "عنوان التطبيق"
+  }
+}
