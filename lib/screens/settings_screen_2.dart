@@ -14,26 +14,24 @@ class SettingsScreen2 extends StatelessWidget {
     final themeProvider = Provider.of<ThemesProvider>(context);
     final languageProvider = Provider.of<LanguageProvider>(context);
 
-
-    final localizations = S.of(context);
+    final localizations = S.of(context); // Access localized strings
 
     return Scaffold(
       backgroundColor: themeProvider.isDarkMode ? Colors.black : Colors.white,
+      appBar: AppBar(
+        title: Text(
+          localizations.settings,  // Use localized settings title in AppBar
+          style: TextStyle(color: themeProvider.isDarkMode ? Colors.white : Color(0xFF17212C),fontWeight: FontWeight.bold),
+        ),
+        backgroundColor: themeProvider.isDarkMode ? Colors.black : Color(0xFFF2D9BB),
+        iconTheme: IconThemeData(color: themeProvider.isDarkMode ? Colors.white : Color(0xFF17212C)),
+        elevation: 0,
+      ),
       body: Padding(
-        padding: const EdgeInsets.all(50.0),
+        padding: const EdgeInsets.all(16.0),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.center,
           children: [
-            Center(
-              child: Text(
-                localizations.settings,
-                style: TextStyle(
-                  fontSize: 70.0,
-                  fontWeight: FontWeight.bold,
-                  color: themeProvider.isDarkMode ? Colors.white : Color(0xFFF2D9BB),
-                ),
-              ),
-            ),
             SizedBox(height: 35.0),
             Container(
               decoration: BoxDecoration(
@@ -79,12 +77,15 @@ class SettingsScreen2 extends StatelessWidget {
                         title: localizations.language,
                         icon: Icons.language_outlined,
                         onTap: () {
-
                           showDialog(
                             context: context,
                             builder: (context) {
                               return AlertDialog(
-                                title: Text(localizations.select_language , style: TextStyle(color: themeProvider.isDarkMode ? Colors.white : Color(0xFF17212C),),),
+                                title: Text(
+                                  localizations.select_language,
+                                  style: TextStyle(
+                                      color: themeProvider.isDarkMode ? Colors.white : Color(0xFF17212C)),
+                                ),
                                 content: Column(
                                   mainAxisSize: MainAxisSize.min,
                                   children: [

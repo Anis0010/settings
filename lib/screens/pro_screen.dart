@@ -9,7 +9,6 @@ class ProScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     final themeProvider = Provider.of<ThemesProvider>(context);
 
-
     return Consumer<LanguageProvider>(
       builder: (context, languageProvider, child) {
         final localizations = S.of(context);
@@ -58,48 +57,50 @@ class ProScreen extends StatelessWidget {
                     ),
                   ),
                   SizedBox(height: 20),
-                  Container(
-                    padding: EdgeInsets.all(16.0),
-                    decoration: BoxDecoration(
-                      color: themeProvider.isDarkMode ? Colors.grey[800] : Colors.grey[200],
-                      borderRadius: BorderRadius.circular(10),
-                    ),
-                    child: Column(
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      children: [
-
-                        Text(
-                          '${localizations.language}: ${languageProvider.locale.languageCode.toUpperCase()}',
-                          style: TextStyle(
-                            fontSize: 16,
-                            color: themeProvider.isDarkMode ? Colors.white : Color(0xFF17212C),
+                  SizedBox(
+                    width: MediaQuery.of(context).size.width * 0.85, // Set width to 85% of screen width
+                    child: Container(
+                      padding: EdgeInsets.all(16.0),
+                      decoration: BoxDecoration(
+                        color: themeProvider.isDarkMode ? Colors.grey[800] : Colors.grey[200],
+                        borderRadius: BorderRadius.circular(10),
+                      ),
+                      child: Column(
+                        crossAxisAlignment: CrossAxisAlignment.center,
+                        children: [
+                          Text(
+                            '${localizations.language}: ${languageProvider.locale.languageCode.toUpperCase()}',
+                            style: TextStyle(
+                              fontSize: 16,
+                              color: themeProvider.isDarkMode ? Colors.white : Color(0xFF17212C),
+                            ),
                           ),
-                        ),
-                        SizedBox(height: 10),
-                        Text(
-                          '${localizations.profile}: Youssef Ahmed',
-                          style: TextStyle(
-                            fontSize: 16,
-                            color: themeProvider.isDarkMode ? Colors.white : Color(0xFF17212C),
+                          SizedBox(height: 10),
+                          Text(
+                            '${localizations.profile}: Youssef Ahmed',
+                            style: TextStyle(
+                              fontSize: 16,
+                              color: themeProvider.isDarkMode ? Colors.white : Color(0xFF17212C),
+                            ),
                           ),
-                        ),
-                        SizedBox(height: 10),
-                        Text(
-                          '${localizations.phone_number}: 00000000000',
-                          style: TextStyle(
-                            fontSize: 16,
-                            color: themeProvider.isDarkMode ? Colors.white : Color(0xFF17212C),
+                          SizedBox(height: 10),
+                          Text(
+                            '${localizations.phone_number}: 00000000000',
+                            style: TextStyle(
+                              fontSize: 16,
+                              color: themeProvider.isDarkMode ? Colors.white : Color(0xFF17212C),
+                            ),
                           ),
-                        ),
-                        SizedBox(height: 10),
-                        Text(
-                          '${localizations.date_of_birth}: 28/9/2002',
-                          style: TextStyle(
-                            fontSize: 16,
-                            color: themeProvider.isDarkMode ? Colors.white : Color(0xFF17212C),
+                          SizedBox(height: 10),
+                          Text(
+                            '${localizations.date_of_birth}: 28/9/2002',
+                            style: TextStyle(
+                              fontSize: 16,
+                              color: themeProvider.isDarkMode ? Colors.white : Color(0xFF17212C),
+                            ),
                           ),
-                        ),
-                      ],
+                        ],
+                      ),
                     ),
                   ),
                 ],
